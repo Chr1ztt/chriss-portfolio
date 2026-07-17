@@ -6,7 +6,7 @@ export default function ProfilePhoto() {
   const leftFloatShapeClass = "left-float-shape"
   const rightFloatShapeClass = "right-float-shape"
   useGSAP(() => {
-    const leftShapes = gsap.utils.toArray(`.${leftFloatShapeClass}`).forEach((el, i) => {
+    gsap.utils.toArray(`.${leftFloatShapeClass}`).forEach((el, i) => {
       const distance = 10 + Math.random() * 8 // naik-turun 10-18px
       const duration = 2.2 + Math.random() * 1.4 // 2.2 - 3.6 detik per siklus
       const rotateAmount = (Math.random() > 0.5 ? 1 : -1) * (1 + Math.random() * 2)
@@ -15,9 +15,11 @@ export default function ProfilePhoto() {
         x: `+=${distance*2}`,
         y: `-=${distance}`,
         rotation: rotateAmount,
-        transformOrigin: "50% 50%",
+        // svgOrigin agar GSAP pakai SVG attribute transform, bukan CSS transform
+        // sehingga animasi path di dalam clipPath bisa berjalan di semua browser
+        svgOrigin: "150 200",
         duration: duration,
-        repeat:-1,
+        repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
         delay: i * 0.25, // efek berjenjang, shape tidak bergerak serentak
@@ -50,137 +52,141 @@ export default function ProfilePhoto() {
           />
         </mask>
         <clipPath id="shape1">
-          <path d="M 48.2227 374.659 l 207.1823 -104.91 v 25.341 l -207.1823 104.91 v -25.341 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 48.2227 374.659 l 207.1823 -104.91 v 25.341 l -207.1823 104.91 v -25.341 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape2">
-          <path d="M 164.994 333.55 l 71.622 -36.267 v 17.767 l -71.622 36.267 v -17.767 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 164.994 333.55 l 71.622 -36.267 v 17.767 l -71.622 36.267 v -17.767 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape3">
-          <path d="M 153.362 370.398 l 134.896 -68.307 v 29.602 l -134.896 68.307 v -29.602 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 153.362 370.398 l 134.896 -68.307 v 29.602 l -134.896 68.307 v -29.602 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape4">
-          <path d="M 133.333 287.29 l 91.389 -46.276 v 19.822 l -91.389 46.276 v -19.822 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 133.333 287.29 l 91.389 -46.276 v 19.822 l -91.389 46.276 v -19.822 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape5">
           <path
+            className={leftFloatShapeClass}
             d="M 61.7115 343.379 l 163.0105 -82.544 l 19.82 9.317 l -163.01 82.544 l -19.812 -9.317 Z"
             fill="#F5F5F5"
           />
         </clipPath>
         <clipPath id="shape6">
-          <path d="M 0 343.379 l 101.107 -51.197 l 25.92 9.796 l -101.107 51.197 l -25.92 -9.796 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 0 343.379 l 101.107 -51.197 l 25.92 9.796 l -101.107 51.197 l -25.92 -9.796 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape7">
-          <path d="M 27.3017 308.522 l 158.8473 -80.435 v 34.857 l -158.847 80.435 v -34.857 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 27.3017 308.522 l 158.8473 -80.435 v 34.857 l -158.847 80.435 v -34.857 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape8">
-          <path d="M 175.724 193.953 l 124.276 -62.93 v 27.271 l -124.276 62.93 v -27.271 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 175.724 193.953 l 124.276 -62.93 v 27.271 l -124.276 62.93 v -27.271 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape9">
-          <path d="M 52.7024 237.322 l 201.041 -101.801 l 0 29.222 l -201.041 101.801 l 0 -29.222 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 52.7024 237.322 l 201.041 -101.801 l 0 29.222 l -201.041 101.801 l 0 -29.222 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape10">
           <path
+            className={leftFloatShapeClass}
             d="M 61.8729 266.935 l 85.532 -43.31 l 21.927 8.287 l -85.532 43.31 l -21.927 -8.287 Z"
             fill="#F5F5F5"
           />
         </clipPath>
         <clipPath id="shape11">
-          <path d="M 190.873 219.097 l 67.187 -34.022 v 25.988 l -67.187 34.022 v -25.988 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 190.873 219.097 l 67.187 -34.022 v 25.988 l -67.187 34.022 v -25.988 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape12">
           <path
+            className={leftFloatShapeClass}
             d="M 47.6479 200.564 l 139.336 -70.556 l 35.721 13.5 l -139.336 70.556 l -35.721 -13.5 Z"
             fill="#F5F5F5"
           />
         </clipPath>
         <clipPath id="shape13">
-          <path d="M 119.571 142.495 l 155.654 -78.818 v 34.156 l -155.654 78.818 v -34.156 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 119.571 142.495 l 155.654 -78.818 v 34.156 l -155.654 78.818 v -34.156 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape14">
-          <path d="M 38.4306 166.95 l 78.277 -39.637 v 30.277 l -78.277 39.637 v -30.277 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 38.4306 166.95 l 78.277 -39.637 v 30.277 l -78.277 39.637 v -30.277 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape15">
-          <path d="M 119.369 119.459 l 134.375 -68.043 v 29.145 l -134.375 68.043 v -29.145 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 119.369 119.459 l 134.375 -68.043 v 29.145 l -134.375 68.043 v -29.145 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape16">
-          <path d="M 119.484 93.9354 l 108.753 -55.065 v 29.226 l -108.753 55.065 v -29.226 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 119.484 93.9354 l 108.753 -55.065 v 29.226 l -108.753 55.065 v -29.226 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape17">
           <path
+            className={leftFloatShapeClass}
             d="M 0.0648 170.018 l 90.108 -45.628 l 23.1008 8.73 l -90.108 45.628 l -23.1008 -8.73 Z"
             fill="#F5F5F5"
           />
         </clipPath>
         <clipPath id="shape18">
-          <path d="M 29.2773 101.801 l 201.041 -101.8 v 29.222 l -201.041 101.8 v -29.222 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 29.2773 101.801 l 201.041 -101.8 v 29.222 l -201.041 101.8 v -29.222 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape19">
-          <path d="M 29.0161 131.023 l 61 -31 l 22.1 7.28 l -61 31 l -22.1 -7.28 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 29.0161 131.023 l 61 -31 l 22.1 7.28 l -61 31 l -22.1 -7.28 Z" fill="#F5F5F5" />
         </clipPath>
         <clipPath id="shape20">
-          <path d="M 14.8147 68.1926 l 103.7 -52.65 l 37.6 12.33 l -103.7 52.65 l -37.6 -12.33 Z" fill="#F5F5F5" />
+          <path className={leftFloatShapeClass} d="M 14.8147 68.1926 l 103.7 -52.65 l 37.6 12.33 l -103.7 52.65 l -37.6 -12.33 Z" fill="#F5F5F5" />
         </clipPath>
 
         {/* <rect fill="url(#pattern0_91_93)"/> */}
-        <g clipPath="url(#shape1)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape1)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape2)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape2)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape3)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape3)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape4)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape4)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape5)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape5)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape6)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape6)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape7)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape7)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape8)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape8)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape9)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape9)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape10)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape10)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape11)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape11)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape12)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape12)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape13)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape13)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape14)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape14)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape15)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape15)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape16)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape16)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape17)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape17)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape18)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape18)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape19)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape19)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
-        <g clipPath="url(#shape20)" className={`${leftFloatShapeClass}`}>
+        <g clipPath="url(#shape20)">
           <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" />
         </g>
 
