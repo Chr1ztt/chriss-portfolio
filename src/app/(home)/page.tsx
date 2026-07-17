@@ -1,5 +1,6 @@
 "use client"
 
+import ProfilePhoto from "@/features/landing/components/profile-photo"
 import { gsap, SplitText } from "@/lib/gsap"
 import { useGSAP } from "@gsap/react"
 import React from "react"
@@ -157,6 +158,9 @@ const Home = React.forwardRef<React.ComponentRef<"div">, React.ComponentProps<"d
 
   return (
     <div className="relative overflow-hidden">
+      <div className="absolute flex h-screen w-screen items-center justify-center">
+        <ProfilePhoto />
+      </div>
       <div className={`fixed inset-0 z-30 h-screen w-screen bg-foreground ${loadingClass}`}></div>
       <div ref={ref} className="z-10 flex min-h-screen flex-col justify-end bg-background p-4 lg:p-8" {...props}>
         <div className="flex flex-row items-end justify-between">

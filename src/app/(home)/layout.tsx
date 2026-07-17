@@ -1,4 +1,4 @@
-import HomeHeader from "@/features/header/components/HomeHeader";
+import HomeHeader from "@/features/header/components/home-header";
 import { ComponentProps } from "react";
 
 
