@@ -10,6 +10,7 @@ export default function HomeHeader() {
       <div className="flex w-fit flex-row items-center justify-center gap-4">
         <div className="font-light cursor-pointer">RESUME</div>
         <div className="font-light cursor-pointer">PROJECT</div>
+        <div className="font-light cursor-pointer">GALLERY</div>
         <Link href="https://github.com/Chr1ztt" target="_blank">
           <Image src={githubLogo} alt="Github Logo" className="size-10 cursor-pointer" />
         </Link>
