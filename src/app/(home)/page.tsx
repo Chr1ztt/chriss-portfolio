@@ -1,11 +1,15 @@
 "use client"
 
+import { LANDING_ANIMATION_DELAY } from "@/constants/animation.constants"
 import ProfilePhoto from "@/features/landing/components/profile-photo"
-import { gsap, SplitText } from "@/lib/gsap"
+import { gsap } from "@/lib/gsap"
+import { blinkEffect } from "@/utils/animation.utils"
 import { useGSAP } from "@gsap/react"
-import React from "react"
-// import {} from "gsap"
-const Home = React.forwardRef<React.ComponentRef<"div">, React.ComponentProps<"div">>(({ ...props }, ref) => {
+import React, { ComponentProps } from "react"
+
+type Props = ComponentProps<"div">
+
+export default function Home({ ref }: Props) {
   const loadingClass = "loading-class"
   const firstClass = "split-first"
   const secondClass = "split-second"
@@ -22,28 +26,7 @@ const Home = React.forwardRef<React.ComponentRef<"div">, React.ComponentProps<"d
       }
     )
 
-    const splitText = SplitText.create(`.${firstClass}`, { type: "words, chars" })
-    splitText.chars.forEach((char) => {
-      const totalDelay = Math.random() * 0.5 + 3
-      gsap.from(char, {
-        visibility: "hidden",
-        keyframes: [
-          { visibility: "hidden" },
-          { visibility: "visible" },
-          { visibility: "hidden" },
-          { visibility: "visible" },
-          { visibility: "hidden" },
-          { visibility: "visible" },
-          { visibility: "hidden" },
-          { visibility: "visible" },
-          { visibility: "hidden" },
-          { visibility: "visible" },
-        ],
-        duration: 0.5,
-        ease: "power1.in",
-        delay: totalDelay,
-      })
-    })
+    blinkEffect(`.${firstClass}`, Math.random() * 0.5 + LANDING_ANIMATION_DELAY)
 
     gsap.to(`.${secondClass}`, {
       delay: "4",
@@ -162,7 +145,7 @@ const Home = React.forwardRef<React.ComponentRef<"div">, React.ComponentProps<"d
         <ProfilePhoto />
       </div>
       <div className={`fixed inset-0 z-30 h-screen w-screen bg-foreground ${loadingClass}`}></div>
-      <div ref={ref} className="z-10 flex min-h-screen flex-col justify-end bg-background p-4 lg:p-8" {...props}>
+      <div ref={ref} className="z-10 flex min-h-screen flex-col justify-end bg-background p-4 lg:p-8">
         <div className="flex flex-row items-end justify-between">
           <div className="flex flex-col">
             <div className={`text-4xl font-normal ${firstClass} `}>Christian Adi Ananta</div>
@@ -179,8 +162,4 @@ const Home = React.forwardRef<React.ComponentRef<"div">, React.ComponentProps<"d
       </div>
     </div>
   )
-})
-
-Home.displayName = "Home"
-
-export default Home
+}
