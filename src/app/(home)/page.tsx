@@ -141,7 +141,7 @@ export default function Home({ ref }: Props) {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute flex h-screen w-screen items-center justify-center">
+      <div className="absolute flex h-dvh w-screen items-center justify-center">
         <ProfilePhoto />
       </div>
       <div className={`fixed inset-0 z-30 h-screen w-screen bg-foreground ${loadingClass}`}></div>
