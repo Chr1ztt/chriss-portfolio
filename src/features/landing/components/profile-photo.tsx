@@ -1,6 +1,5 @@
 "use client"
 
-import { LANDING_ANIMATION_DELAY } from "@/constants/animation.constants"
 import { gsap, useGSAP } from "@/lib/gsap"
 
 export default function ProfilePhoto() {
@@ -14,7 +13,7 @@ export default function ProfilePhoto() {
       const delay = Math.random() * 3
 
       const blinkDelay = Math.random() * 0.5 + 2.5
-      gsap.from(el, {
+      gsap.from(el as gsap.TweenTarget, {
         visibility: "hidden",
         keyframes: [
           { visibility: "hidden" },
