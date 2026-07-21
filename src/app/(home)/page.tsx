@@ -141,23 +141,26 @@ export default function Home({ ref }: Props) {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute flex h-dvh w-screen items-center justify-center">
+      <div
+        className="absolute flex h-dvh w-screen items-center justify-center"
+        // style={{ minHeight: "100vh", maxHeight: "-" }}
+      >
         <ProfilePhoto />
       </div>
-      <div className={`fixed inset-0 z-30 h-screen w-screen bg-foreground ${loadingClass}`}></div>
-      <div ref={ref} className="z-10 flex min-h-screen flex-col justify-end bg-background p-4 lg:p-8">
+      <div className={`fixed inset-0 z-30 h-dvh w-screen bg-foreground ${loadingClass}`}></div>
+      <div ref={ref} className="z-10 flex h-dvh flex-col justify-end bg-background p-4 lg:p-8">
         <div className="flex flex-row items-end justify-between">
           <div className="flex flex-col justify-end">
-            <div className={`text-base md:text-lg lg:text-4xl font-normal ${firstClass} `}>Christian Adi Ananta</div>
-            <div className="flex flex-row h-4">
+            <div className={`text-base font-normal md:text-lg lg:text-4xl ${firstClass} `}>Christian Adi Ananta</div>
+            <div className="flex h-4 flex-row">
               <span className={`text-[0.5rem] md:text-base lg:text-2xl ${secondClass} font-normal`}> </span>&nbsp;&nbsp;
-              <span className={`text-[0.5rem] md:text-base lg:text-2xl font-normal ${infinityScrambleClass}`}></span>
+              <span className={`text-[0.5rem] font-normal md:text-base lg:text-2xl ${infinityScrambleClass}`}></span>
             </div>
           </div>
           <div className="flex flex-col items-end">
-            <div className={`text-sm md:text-base lg:text-3xl font-normal`}>My Portfolio</div>
-            <div className={`text-xs md:text-sm lg:text-xl font-normal underline`}>Contact Me</div>
-          </div> 
+            <div className={`text-sm font-normal md:text-base lg:text-3xl`}>My Portfolio</div>
+            <div className={`text-xs font-normal underline md:text-sm lg:text-xl`}>Contact Me</div>
+          </div>
         </div>
       </div>
     </div>
