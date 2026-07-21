@@ -1,0 +1,1 @@
+export const LANDING_ANIMATION_DELAY = 3

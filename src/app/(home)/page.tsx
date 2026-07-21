@@ -1,11 +1,15 @@
 "use client"
 
+import { LANDING_ANIMATION_DELAY } from "@/constants/animation.constants"
 import ProfilePhoto from "@/features/landing/components/profile-photo"
-import { gsap, SplitText } from "@/lib/gsap"
+import { gsap } from "@/lib/gsap"
+import { blinkEffect } from "@/utils/animation.utils"
 import { useGSAP } from "@gsap/react"
-import React from "react"
-// import {} from "gsap"
-const Home = React.forwardRef<React.ComponentRef<"div">, React.ComponentProps<"div">>(({ ...props }, ref) => {
+import React, { ComponentProps } from "react"
+
+type Props = ComponentProps<"div">
+
+export default function Home({ ref }: Props) {
   const loadingClass = "loading-class"
   const firstClass = "split-first"
   const secondClass = "split-second"
@@ -22,28 +26,7 @@ const Home = React.forwardRef<React.ComponentRef<"div">, React.ComponentProps<"d
       }
     )
 
-    const splitText = SplitText.create(`.${firstClass}`, { type: "words, chars" })
-    splitText.chars.forEach((char) => {
-      const totalDelay = Math.random() * 0.5 + 3
-      gsap.from(char, {
-        visibility: "hidden",
-        keyframes: [
-          { visibility: "hidden" },
-          { visibility: "visible" },
-          { visibility: "hidden" },
-          { visibility: "visible" },
-          { visibility: "hidden" },
-          { visibility: "visible" },
-          { visibility: "hidden" },
-          { visibility: "visible" },
-          { visibility: "hidden" },
-          { visibility: "visible" },
-        ],
-        duration: 0.5,
-        ease: "power1.in",
-        delay: totalDelay,
-      })
-    })
+    blinkEffect(`.${firstClass}`, Math.random() * 0.5 + LANDING_ANIMATION_DELAY)
 
     gsap.to(`.${secondClass}`, {
       delay: "4",
@@ -60,8 +43,8 @@ const Home = React.forwardRef<React.ComponentRef<"div">, React.ComponentProps<"d
     gsap.to(`.${infinityScrambleClass}`, {
       delay: 4.5,
       keyframes: [
-        { scrambleText: { text: "Backend Developer" }, delay: 0, duration: 2 },
-        { scrambleText: { text: "Backend Developer" }, delay: 3, duration: 1, reversed: true },
+        { scrambleText: { text: "Fullstack Developer" }, delay: 0, duration: 2 },
+        { scrambleText: { text: "Fullstack Developer" }, delay: 3, duration: 1, reversed: true },
         { scrambleText: { text: " " }, duration: 1 },
         { scrambleText: { text: "Software Architecture Enthusiast" }, delay: -0.3, duration: 3 },
         { scrambleText: { text: "Software Architecture Enthusiast" }, delay: 3, duration: 1.5, reversed: true },
@@ -162,25 +145,21 @@ const Home = React.forwardRef<React.ComponentRef<"div">, React.ComponentProps<"d
         <ProfilePhoto />
       </div>
       <div className={`fixed inset-0 z-30 h-screen w-screen bg-foreground ${loadingClass}`}></div>
-      <div ref={ref} className="z-10 flex min-h-screen flex-col justify-end bg-background p-4 lg:p-8" {...props}>
+      <div ref={ref} className="z-10 flex min-h-screen flex-col justify-end bg-background p-4 lg:p-8">
         <div className="flex flex-row items-end justify-between">
-          <div className="flex flex-col">
-            <div className={`text-4xl font-normal ${firstClass} `}>Christian Adi Ananta</div>
-            <div className="flex flex-row">
-              <span className={`text-2xl ${secondClass} font-normal`}> </span>&nbsp;&nbsp;
-              <span className={`text-2xl font-normal ${infinityScrambleClass}`}></span>
+          <div className="flex flex-col justify-end">
+            <div className={`text-base md:text-lg lg:text-4xl font-normal ${firstClass} `}>Christian Adi Ananta</div>
+            <div className="flex flex-row h-4">
+              <span className={`text-[0.5rem] md:text-base lg:text-2xl ${secondClass} font-normal`}> </span>&nbsp;&nbsp;
+              <span className={`text-[0.5rem] md:text-base lg:text-2xl font-normal ${infinityScrambleClass}`}></span>
             </div>
           </div>
           <div className="flex flex-col items-end">
-            <div className={`text-3xl font-normal`}>My Portfolio</div>
-            <div className={`text-xl font-normal underline`}>Contact Me</div>
-          </div>
+            <div className={`text-sm md:text-base lg:text-3xl font-normal`}>My Portfolio</div>
+            <div className={`text-xs md:text-sm lg:text-xl font-normal underline`}>Contact Me</div>
+          </div> 
         </div>
       </div>
     </div>
   )
-})
-
-Home.displayName = "Home"
-
-export default Home
+}

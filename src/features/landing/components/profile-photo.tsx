@@ -1,16 +1,37 @@
 "use client"
 
+import { LANDING_ANIMATION_DELAY } from "@/constants/animation.constants"
 import { gsap, useGSAP } from "@/lib/gsap"
 
 export default function ProfilePhoto() {
   const floatShapeClass = "float-shape"
   useGSAP(() => {
-    gsap.utils.toArray(`.${floatShapeClass}`).forEach((el, i) => {
+    gsap.utils.toArray(`.${floatShapeClass}`).forEach((el) => {
       const distance = 20 + Math.random() * 8
       const duration = 2.5 + Math.random() * 1.0
       // const rotateAmount = (Math.random() > 0.5 ? 1 : -1) * (1 + Math.random() * 2)
       const rightDirection = Math.random() > 0.5
       const delay = Math.random() * 3
+
+      const blinkDelay = Math.random() * 0.5 + 2.5
+      gsap.from(el, {
+        visibility: "hidden",
+        keyframes: [
+          { visibility: "hidden" },
+          { visibility: "visible" },
+          { visibility: "hidden" },
+          { visibility: "visible" },
+          { visibility: "hidden" },
+          { visibility: "visible" },
+          { visibility: "hidden" },
+          { visibility: "visible" },
+          { visibility: "hidden" },
+          { visibility: "visible" },
+        ],
+        duration: 0.5,
+        ease: "power1.in",
+        delay: blinkDelay,
+      })
 
       gsap.fromTo(
         el as gsap.TweenTarget,
@@ -37,8 +58,9 @@ export default function ProfilePhoto() {
   return (
     <>
       <svg
-        width="300"
-        height="400"
+        // width="300"
+        // height="400"
+        className="h-50 w-37.5 md:h-75 md:w-56.25 lg:h-100 lg:w-75"
         viewBox="0 0 300 400"
         fill="#F5F5F5"
         xmlns="http://www.w3.org/2000/svg"
