@@ -15,23 +15,23 @@ export default function ProfilePhoto() {
 
       const blinkDelay = Math.random() * 0.5 + 2.5
       gsap.from(el, {
-      visibility: "hidden",
-      keyframes: [
-        { visibility: "hidden" },
-        { visibility: "visible" },
-        { visibility: "hidden" },
-        { visibility: "visible" },
-        { visibility: "hidden" },
-        { visibility: "visible" },
-        { visibility: "hidden" },
-        { visibility: "visible" },
-        { visibility: "hidden" },
-        { visibility: "visible" },
-      ],
-      duration: 0.5,
-      ease: "power1.in",
-      delay: blinkDelay,
-    })
+        visibility: "hidden",
+        keyframes: [
+          { visibility: "hidden" },
+          { visibility: "visible" },
+          { visibility: "hidden" },
+          { visibility: "visible" },
+          { visibility: "hidden" },
+          { visibility: "visible" },
+          { visibility: "hidden" },
+          { visibility: "visible" },
+          { visibility: "hidden" },
+          { visibility: "visible" },
+        ],
+        duration: 0.5,
+        ease: "power1.in",
+        delay: blinkDelay,
+      })
 
       gsap.fromTo(
         el as gsap.TweenTarget,
@@ -58,8 +58,9 @@ export default function ProfilePhoto() {
   return (
     <>
       <svg
-        width="300"
-        height="400"
+        // width="300"
+        // height="400"
+        className="h-50 w-37.5 md:h-75 md:w-56.25 lg:h-100 lg:w-75"
         viewBox="0 0 300 400"
         fill="#F5F5F5"
         xmlns="http://www.w3.org/2000/svg"

@@ -43,8 +43,8 @@ export default function Home({ ref }: Props) {
     gsap.to(`.${infinityScrambleClass}`, {
       delay: 4.5,
       keyframes: [
-        { scrambleText: { text: "Backend Developer" }, delay: 0, duration: 2 },
-        { scrambleText: { text: "Backend Developer" }, delay: 3, duration: 1, reversed: true },
+        { scrambleText: { text: "Fullstack Developer" }, delay: 0, duration: 2 },
+        { scrambleText: { text: "Fullstack Developer" }, delay: 3, duration: 1, reversed: true },
         { scrambleText: { text: " " }, duration: 1 },
         { scrambleText: { text: "Software Architecture Enthusiast" }, delay: -0.3, duration: 3 },
         { scrambleText: { text: "Software Architecture Enthusiast" }, delay: 3, duration: 1.5, reversed: true },
@@ -147,17 +147,17 @@ export default function Home({ ref }: Props) {
       <div className={`fixed inset-0 z-30 h-screen w-screen bg-foreground ${loadingClass}`}></div>
       <div ref={ref} className="z-10 flex min-h-screen flex-col justify-end bg-background p-4 lg:p-8">
         <div className="flex flex-row items-end justify-between">
-          <div className="flex flex-col">
-            <div className={`text-4xl font-normal ${firstClass} `}>Christian Adi Ananta</div>
-            <div className="flex flex-row">
-              <span className={`text-2xl ${secondClass} font-normal`}> </span>&nbsp;&nbsp;
-              <span className={`text-2xl font-normal ${infinityScrambleClass}`}></span>
+          <div className="flex flex-col justify-end">
+            <div className={`text-base md:text-lg lg:text-4xl font-normal ${firstClass} `}>Christian Adi Ananta</div>
+            <div className="flex flex-row h-4">
+              <span className={`text-[0.5rem] md:text-base lg:text-2xl ${secondClass} font-normal`}> </span>&nbsp;&nbsp;
+              <span className={`text-[0.5rem] md:text-base lg:text-2xl font-normal ${infinityScrambleClass}`}></span>
             </div>
           </div>
           <div className="flex flex-col items-end">
-            <div className={`text-3xl font-normal`}>My Portfolio</div>
-            <div className={`text-xl font-normal underline`}>Contact Me</div>
-          </div>
+            <div className={`text-sm md:text-base lg:text-3xl font-normal`}>My Portfolio</div>
+            <div className={`text-xs md:text-sm lg:text-xl font-normal underline`}>Contact Me</div>
+          </div> 
         </div>
       </div>
     </div>
