@@ -1,14 +1,10 @@
 "use client"
 
 import { gsap, useGSAP } from "@/lib/gsap"
-import { useTheme } from "next-themes"
 import personalPhoto from "../../../../public/Ian_withened_compressed.png"
-
 
 export default function ProfilePhoto() {
   const floatShapeClass = "float-shape"
-  const {resolvedTheme} = useTheme()
-  const svgBgColor = resolvedTheme === "dark" ? "#F5F5F5" : "#121212"
   useGSAP(() => {
     gsap.utils.toArray(`.${floatShapeClass}`).forEach((el) => {
       const distance = 20 + Math.random() * 8
@@ -67,207 +63,155 @@ export default function ProfilePhoto() {
         // height="400"
         className="h-50 w-37.5 md:h-75 md:w-56.25 lg:h-100 lg:w-75"
         viewBox="0 0 300 400"
-        // fill={svgBgColor}
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         overflow="visible"
       >
-        <clipPath id="shape1">
-          <path
-            className={floatShapeClass}
-            d="M 48.2227 374.659 l 207.1823 -104.91 v 25.341 l -207.1823 104.91 v -25.341 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape2">
-          <path
-            className={floatShapeClass}
-            d="M 164.994 333.55 l 71.622 -36.267 v 17.767 l -71.622 36.267 v -17.767 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape3">
-          <path
-            className={floatShapeClass}
-            d="M 153.362 370.398 l 134.896 -68.307 v 29.602 l -134.896 68.307 v -29.602 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape4">
-          <path
-            className={floatShapeClass}
-            d="M 133.333 287.29 l 91.389 -46.276 v 19.822 l -91.389 46.276 v -19.822 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape5">
-          <path
-            className={floatShapeClass}
-            d="M 61.7115 343.379 l 163.0105 -82.544 l 19.82 9.317 l -163.01 82.544 l -19.812 -9.317 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape6">
-          <path
-            className={floatShapeClass}
-            d="M 0 343.379 l 101.107 -51.197 l 25.92 9.796 l -101.107 51.197 l -25.92 -9.796 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape7">
-          <path
-            className={floatShapeClass}
-            d="M 27.3017 308.522 l 158.8473 -80.435 v 34.857 l -158.847 80.435 v -34.857 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape8">
-          <path
-            className={floatShapeClass}
-            d="M 175.724 193.953 l 124.276 -62.93 v 27.271 l -124.276 62.93 v -27.271 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape9">
-          <path
-            className={floatShapeClass}
-            d="M 52.7024 237.322 l 201.041 -101.801 l 0 29.222 l -201.041 101.801 l 0 -29.222 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape10">
-          <path
-            className={floatShapeClass}
-            d="M 61.8729 266.935 l 85.532 -43.31 l 21.927 8.287 l -85.532 43.31 l -21.927 -8.287 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape11">
-          <path
-            className={floatShapeClass}
-            d="M 190.873 219.097 l 67.187 -34.022 v 25.988 l -67.187 34.022 v -25.988 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape12">
-          <path
-            className={floatShapeClass}
-            d="M 47.6479 200.564 l 139.336 -70.556 l 35.721 13.5 l -139.336 70.556 l -35.721 -13.5 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape13">
-          <path
-            className={floatShapeClass}
-            d="M 119.571 142.495 l 155.654 -78.818 v 34.156 l -155.654 78.818 v -34.156 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape14">
-          <path
-            className={floatShapeClass}
-            d="M 38.4306 166.95 l 78.277 -39.637 v 30.277 l -78.277 39.637 v -30.277 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape15">
-          <path
-            className={floatShapeClass}
-            d="M 119.369 119.459 l 134.375 -68.043 v 29.145 l -134.375 68.043 v -29.145 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape16">
-          <path
-            className={floatShapeClass}
-            d="M 119.484 93.9354 l 108.753 -55.065 v 29.226 l -108.753 55.065 v -29.226 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape17">
-          <path
-            className={floatShapeClass}
-            d="M 0.0648 170.018 l 90.108 -45.628 l 23.1008 8.73 l -90.108 45.628 l -23.1008 -8.73 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape18">
-          <path
-            className={floatShapeClass}
-            d="M 29.2773 101.801 l 201.041 -101.8 v 29.222 l -201.041 101.8 v -29.222 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape19">
-          <path
-            className={floatShapeClass}
-            d="M 29.0161 131.023 l 61 -30.886 l 22.1 7.28 l -61 30.886 l -22.1 -7.28 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape20">
-          <path
-            className={floatShapeClass}
-            d="M 14.8147 68.1926 l 103.7 -52.5063 l 37.6 12.33 l -103.7 52.5063 l -37.6 -12.33 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape21">
-          <path
-            className={floatShapeClass}
-            d="M 4.6416 246.289 l 113.6324 -57.539 l 29.132 11.009 l -113.6321 57.539 l -29.132 -11.009 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape22">
-          <path
-            className={floatShapeClass}
-            d="M 194.894 146.535 l 90.388 -45.77 v 11.056 l -90.388 45.77 v -11.055 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape23">
-          <path
-            className={floatShapeClass}
-            d="M 33.7729 295.09 l 95.286 -48.2461 v 13.85 l -95.286 48.2461 v -13.85 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape24">
-          <path
-            className={floatShapeClass}
-            d="M 118.865 225.503 l 106.708 -54.034 v 15.51 l -106.708 54.034 v -15.51 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape25">
-          <path
-            className={floatShapeClass}
-            d="M 87.128 304.166 l 150.245 -76.079 l 38.518 14.556 l -150.245 76.079 l -38.518 -14.556 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape26">
-          <path
-            className={floatShapeClass}
-            d="M 56.0691 391.088 l 74.7 -37.8228 l 27.1 8.9 l -74.7 37.8228 l -27.1 -8.9 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        <clipPath id="shape27">
-          <path
-            className={floatShapeClass}
-            d="M 23.372 162.368 l 158.847 -80.436 l 0 34.858 l -158.847 80.436 l 0 -34.858 Z"
-            fill={svgBgColor}
-          />
-        </clipPath>
-        {Array.from({ length: 27 }, (_, index) => (
-          <g clipPath={`url(#shape${index + 1})`} key={`shape${index + 1}`}>
-            <rect x="-1200" y="-500" width="2700" height="1400" fill={svgBgColor} />
-            <rect x="0" y="0" width="300" height="400" fill="url(#pattern0_133_139)" />
-            {/* <rect x="-97.4883" y="-36.3908" width="497.754" height="662.809" fill="url(#pattern0_133_139)" /> */}
-          </g>
-        ))}
+                <defs>
+          <mask id="compositeMask" maskUnits="userSpaceOnUse" x="-1200" y="-500" width="2700" height="1400">
+            {/* Black background = hidden, white shapes = visible */}
+            <rect x="-1200" y="-500" width="2700" height="1400" fill="black" />
+            <path
+              className={floatShapeClass}
+              d="M 48.2227 374.659 l 207.1823 -104.91 v 25.341 l -207.1823 104.91 v -25.341 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 164.994 333.55 l 71.622 -36.267 v 17.767 l -71.622 36.267 v -17.767 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 153.362 370.398 l 134.896 -68.307 v 29.602 l -134.896 68.307 v -29.602 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 133.333 287.29 l 91.389 -46.276 v 19.822 l -91.389 46.276 v -19.822 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 61.7115 343.379 l 163.0105 -82.544 l 19.82 9.317 l -163.01 82.544 l -19.812 -9.317 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 0 343.379 l 101.107 -51.197 l 25.92 9.796 l -101.107 51.197 l -25.92 -9.796 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 27.3017 308.522 l 158.8473 -80.435 v 34.857 l -158.847 80.435 v -34.857 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 175.724 193.953 l 124.276 -62.93 v 27.271 l -124.276 62.93 v -27.271 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 52.7024 237.322 l 201.041 -101.801 l 0 29.222 l -201.041 101.801 l 0 -29.222 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 61.8729 266.935 l 85.532 -43.31 l 21.927 8.287 l -85.532 43.31 l -21.927 -8.287 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 190.873 219.097 l 67.187 -34.022 v 25.988 l -67.187 34.022 v -25.988 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 47.6479 200.564 l 139.336 -70.556 l 35.721 13.5 l -139.336 70.556 l -35.721 -13.5 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 119.571 142.495 l 155.654 -78.818 v 34.156 l -155.654 78.818 v -34.156 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 38.4306 166.95 l 78.277 -39.637 v 30.277 l -78.277 39.637 v -30.277 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 119.369 119.459 l 134.375 -68.043 v 29.145 l -134.375 68.043 v -29.145 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 119.484 93.9354 l 108.753 -55.065 v 29.226 l -108.753 55.065 v -29.226 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 0.0648 170.018 l 90.108 -45.628 l 23.1008 8.73 l -90.108 45.628 l -23.1008 -8.73 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 29.2773 101.801 l 201.041 -101.8 v 29.222 l -201.041 101.8 v -29.222 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 29.0161 131.023 l 61 -30.886 l 22.1 7.28 l -61 30.886 l -22.1 -7.28 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 14.8147 68.1926 l 103.7 -52.5063 l 37.6 12.33 l -103.7 52.5063 l -37.6 -12.33 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 4.6416 246.289 l 113.6324 -57.539 l 29.132 11.009 l -113.6321 57.539 l -29.132 -11.009 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 194.894 146.535 l 90.388 -45.77 v 11.056 l -90.388 45.77 v -11.055 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 33.7729 295.09 l 95.286 -48.2461 v 13.85 l -95.286 48.2461 v -13.85 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 118.865 225.503 l 106.708 -54.034 v 15.51 l -106.708 54.034 v -15.51 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 87.128 304.166 l 150.245 -76.079 l 38.518 14.556 l -150.245 76.079 l -38.518 -14.556 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 56.0691 391.088 l 74.7 -37.8228 l 27.1 8.9 l -74.7 37.8228 l -27.1 -8.9 Z"
+              fill="white"
+            />
+            <path
+              className={floatShapeClass}
+              d="M 23.372 162.368 l 158.847 -80.436 l 0 34.858 l -158.847 80.436 l 0 -34.858 Z"
+              fill="white"
+            />
+          </mask>
+        </defs>
+        <g mask="url(#compositeMask)">
+          <rect x="-1200" y="-500" width="2700" height="1400" className="fill-[#121212] dark:fill-[#F5F5F5]" />
+          <rect x="0" y="0" width="300" height="400" fill="url(#pattern0_133_139)" />
+        </g>
 
         <defs>
           <pattern id="pattern0_133_139" patternContentUnits="objectBoundingBox" width="1" height="1">
