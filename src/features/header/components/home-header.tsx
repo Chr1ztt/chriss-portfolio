@@ -1,7 +1,7 @@
 import Image from "next/image"
 import logo from "../../../../public/android-chrome-512x512.png"
-import githubLogo from "../../../../public/github.svg"
-import Link from "next/link"
+import GithubLogo from "./github-logo"
+import ThemeSwitcher from "./theme-switcher"
 
 export default function HomeHeader() {
   return (
@@ -11,9 +11,8 @@ export default function HomeHeader() {
         <div className="font-light cursor-pointer">RESUME</div>
         <div className="font-light cursor-pointer">PROJECT</div>
         <div className="font-light cursor-pointer">GALLERY</div>
-        <Link href="https://github.com/Chr1ztt" target="_blank">
-          <Image src={githubLogo} alt="Github Logo" className="size-10 cursor-pointer" />
-        </Link>
+        <GithubLogo className="size-8 "/> 
+        <ThemeSwitcher/>
       </div>
     </div>
   )
